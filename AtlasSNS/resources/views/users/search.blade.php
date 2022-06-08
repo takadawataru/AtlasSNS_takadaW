@@ -5,8 +5,8 @@
 <h2>ユーザー検索</h2>
 <form action="/search_result" method="POST">
     @CSRF
-    <input type="search" name=“textbox” placeholder="ユーザー名">
-    <input type="submit" name="search" value="検索">
+    <P><input type="search" name=“username” placeholder="ユーザー名"></P>
+    <P><input type="submit" name="username" value="検索"></P>
 </form>
 
 <h2>全ユーザー表示</h2>

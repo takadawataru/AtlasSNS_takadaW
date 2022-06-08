@@ -21,11 +21,15 @@ class UsersController extends Controller
 
 
      public function index(Request $request){
-        $users = User::get();
+
         $query = User::query();
          $search = $request->input('username');
-          if ($request->has('username') && $search != '') {
-            $query->where('username', 'like', '%'.$search.'%')->get();}
+          if (!empty($search)) {
+            $query->where('username', 'like',"%{$search}%");}
+
+
+            $users = $query->get();
+
             return view('users.search',[
                 'users'=> $users
             ]);
